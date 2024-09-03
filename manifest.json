@@ -3,7 +3,13 @@
     "name": "Daily Quotes",
     "version": "1.0",
     "description": "Displays a random quote daily.",
-    "permissions": ["activeTab"],
+    "content_scripts": [
+        {
+        "matches": ["<all_urls>"],
+        "js": ["content_script.js"]
+        }
+    ],
+    "permissions": ["tabs"],
     "background": {
       "service_worker": "background.js"
     },
